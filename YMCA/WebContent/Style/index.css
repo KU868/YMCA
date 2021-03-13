@@ -1,0 +1,106 @@
+@charset "UTF-8";
+
+/* html */
+
+.btn-circle-2d-emboss {
+  position:  absolute;
+  left: 350px;
+  display: inline-block;
+  text-decoration: none;
+  color: #FFF;
+  width: 280px;
+  height: 280px;
+  line-height: 280px;
+  border-radius: 50%;
+  text-align: center;  
+  background-image: linear-gradient(45deg, #330033	 0%, #B384FF 100%);
+
+
+}
+
+.btn-circle-3d-emboss {
+position:  absolute;
+  left: 900px;
+  display: inline-block;
+  text-decoration: none;
+  color: #FFF;
+  width: 280px;
+  height: 280px;
+  line-height: 280px;
+  border-radius: 50%;
+  text-align: center;
+  background-image: linear-gradient(45deg, #FF0000	 0%, #FF9872	 100%);
+
+}
+
+.btn-circle-4d-emboss {
+    position:  absolute;
+  left: 900px;
+  bottom: 40px;
+  display: inline-block;
+  text-decoration: none;
+  color: #FFF;
+  width: 280px;
+  height: 280px;
+  line-height: 280px;
+  border-radius: 50%;
+  text-align: center;
+  background-image: linear-gradient(45deg, #FF82B2 0%, #FF0461 100%);
+
+}
+
+.btn-circle-5d-emboss {
+    position:  absolute;
+  left: 350px;
+    bottom: 40px;
+  display: inline-block;
+  text-decoration: none;
+  color: #FFF;
+  width: 280px;
+  height: 280px;
+  line-height: 280px;
+  border-radius: 50%;
+  text-align: center;
+  background-image: linear-gradient(45deg, #709dff 0%, #0000CC 100%);
+    
+
+}
+
+body{
+	background-color: #FFDBC9;
+    
+}
+
+
+
+
+/* 一覧画面 */
+
+/* リストページ */
+table.toolbar {
+    margin-top: 16px;
+    margin-bottom: 32px;
+}
+
+table.list th {
+    width: 150px;
+    text-align: left;
+    padding: 8px;
+    color: #ffffff;
+    background-color: #5555aa;
+}
+
+table.list td {
+    background-color: #bbbbff;
+    padding: 8px;
+}
+
+
+
+
+
+
+
+
+
+
