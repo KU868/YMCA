@@ -26,7 +26,7 @@ import="common.Common"
 <body>
 
 
-	<button type=“button_NEW” onclick="location.href='http://localhost:8080/YMCA/Input.jsp?AA01DOCID=0&MODE=0'">新規登録</button>
+	<button type=“button_NEW” onclick="location.href='http://kkaa01.herokuapp.com/Input.jsp?AA01DOCID=0&MODE=0'">新規登録</button>
 		
 
 	<form action="/SearchServlet" method="post">
@@ -93,7 +93,7 @@ import="common.Common"
 	<tr>
 				
                 <td><!-- パラメタとの幅は空けない。仮に前が少し空いていた場合 空白文字がString[0] にはいってしまい、受取先で"　1"　として受け取ってしまう 　→ formatエラーになっていた -->
-                    <a href= "http://localhost:8080/YMCA/Input.jsp?AA01DOCID=<%= ab.getAA01DOCID()%>&MODE=1"> <p><%= ab.getAA01SAKUSEMD() %></p></a>
+                    <a href= "http://kkaa01.herokuapp.com/Input.jsp?AA01DOCID=<%= ab.getAA01DOCID()%>&MODE=1"> <p><%= ab.getAA01SAKUSEMD() %></p></a>
                 </td>
                 <td>
                     <%= ab.getAA01CATE1() %>

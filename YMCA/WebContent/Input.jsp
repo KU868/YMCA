@@ -38,7 +38,7 @@ import="common.Common"
 	String AA01SAKUSEMD = a2.getAA01SAKUSEMD().toString();	
 %> 
 	
-	<form action="/YMCA/SaveServlet" method="post">
+	<form action="/SaveServlet" method="post">
 <!-- MODE -->	 <input type="hidden" name="MODE" value = <%=MODE%>> 
 <!-- 文書ID -->	 <input type="hidden" name="AA01DOCID" value = <%=a2.getAA01DOCID()%>> 
 	
