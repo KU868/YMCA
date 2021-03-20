@@ -138,9 +138,17 @@ public class AA01Beans_01 {
 
 			// データベースへ接続
 			Class.forName("com.mysql.jdbc.Driver");
+//			conn = DriverManager.getConnection(
+//					"jdbc:mysql://localhost:3306/company_db?characterEncoding=UTF-8&serverTimezone=JST", "suser",
+//					"spass");
+//			
+			
 			conn = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/company_db?characterEncoding=UTF-8&serverTimezone=JST", "suser",
-					"spass");
+					"jdbc:mysql://b265cd7ac6a3a1:91a0d4a0@us-cdbr-east-03.cleardb.com/heroku_3b0ea9874ad3c67?reconnect=true&characterEncoding=UTF-8&serverTimezone=JST", "b265cd7ac6a3a1 ",
+					"91a0d4a0");
+			
+			
+			
 			System.out.println("MySQLに接続できました。");
 
 			// 検索

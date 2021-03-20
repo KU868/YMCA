@@ -24,7 +24,7 @@ import="common.Common"
 <title>検索画面</title>
 </head>
 <body>
-<h1>検索画面</h1>
+
 
 	<button type=“button_NEW” onclick="location.href='http://localhost:8080/YMCA/Input.jsp?AA01DOCID=0&MODE=0'">新規登録</button>
 		
