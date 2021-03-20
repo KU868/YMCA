@@ -29,7 +29,7 @@ import="common.Common"
 	<button type=“button_NEW” onclick="location.href='http://localhost:8080/YMCA/Input.jsp?AA01DOCID=0&MODE=0'">新規登録</button>
 		
 
-	<form action="/YMCA/SearchServlet" method="post">
+	<form action="/SearchServlet" method="post">
 
 
 <p>カテゴリ1
