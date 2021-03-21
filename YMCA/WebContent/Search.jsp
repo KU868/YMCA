@@ -8,9 +8,17 @@ import="java.util.List"
 import="java.util.ArrayList"
 import="beans.AA01Beans_01" 
 import="common.Common" 
+import= "java.net.InetAddress"
 %>
 
 	<!-- 検索結果 の取得-->
+	<%
+	System.out.println(InetAddress.getLocalHost().getHostName());
+	System.out.println(InetAddress.getLocalHost());
+	
+	
+	%>
+	
 	
 <%
 		List<AA01Beans_01> aa01 = (List<AA01Beans_01>)request.getAttribute("aa01"); //JSPに帰ってきていない 　JSP自画面遷移で検索
@@ -26,28 +34,28 @@ import="common.Common"
 <body>
 
 
-	<button type=“button_NEW” onclick="location.href='http://kkaa01.herokuapp.com/Input.jsp?AA01DOCID=0&MODE=0'">新規登録</button>
-		
+	<!-- "location.href='/Input.jsp?   スラッシュをつけると、/YMCA/が消える-->
+	<button type=“button_NEW” onclick="location.href='Input.jsp?AA01DOCID=0&MODE=0'">新規登録</button>	
 
 	<form action="/SearchServlet" method="post">
 
 
 <p>カテゴリ1
 <input type="checkbox" name="AA01CATE1" value="1" >WebPerformer
-<input type="checkbox" name="AA01CATE1" value="2">java
-<input type="checkbox" name="AA01CATE1" value="3">javascript
+<input type="checkbox" name="AA01CATE1" value="2">Java
+<input type="checkbox" name="AA01CATE1" value="3">Javascript
 <input type="checkbox" name="AA01CATE1" value="4">SQL
 <input type="checkbox" name="AA01CATE1" value="5">HTML/CSS
 <input type="checkbox" name="AA01CATE1" value="6">IT関連
-<input type="checkbox" name="AA01CATE1" value="7">業務の取り組み方
+<input type="checkbox" name="AA01CATE1" value="7">仕事に関すること
 <input type="checkbox" name="AA01CATE1" value="8">その他
 </p>
 
  		
 <p>カテゴリ2
-<input type="checkbox" name="AA01CATE2" value="1" >忘備録
+<input type="checkbox" name="AA01CATE2" value="1">忘備録
 <input type="checkbox" name="AA01CATE2" value="2">エラー/課題解決
-<input type="checkbox" name="AA01CATE2" value="3">これ便利ですよ
+<input type="checkbox" name="AA01CATE2" value="3">これ便利/ノウハウ
 <input type="checkbox" name="AA01CATE2" value="4">質問
 <input type="checkbox" name="AA01CATE2" value="5">つぶやき
 </p>
@@ -85,7 +93,7 @@ import="common.Common"
 	
 		
 	<%
-            					//コレクションはループ内で取得する(一覧)
+       //コレクションはループ内で取得する(一覧)
        if(aa01 != null && aa01.size() != 0 ){
          for(AA01Beans_01 ab : aa01) {
             				%> 
@@ -96,10 +104,30 @@ import="common.Common"
                     <a href= "http://kkaa01.herokuapp.com/Input.jsp?AA01DOCID=<%= ab.getAA01DOCID()%>&MODE=1"> <p><%= ab.getAA01SAKUSEMD() %></p></a>
                 </td>
                 <td>
-                    <%= ab.getAA01CATE1() %>
-                </td>
+                    <%
+                        if(ab.getAA01CATE1() == "1"){
+                			%>WebPerformer<%
+                        }else if(ab.getAA01CATE1() == "2"){
+                            %>Java<%
+                        }else if(ab.getAA01CATE1() == "3"){
+                            %>Javascript<%
+                        }else if(ab.getAA01CATE1() == "4"){
+                            %>SQL<%
+                        }else if(ab.getAA01CATE1() == "5"){
+                            %>HTML/CSS<%
+                        }else if(ab.getAA01CATE1() == "6"){
+                            %>IT関連<%
+                        }else if(ab.getAA01CATE1() == "7"){
+                            %>仕事に関すること<%
+                        }else if(ab.getAA01CATE1() == "8"){
+                            %>その他<%
+                        }else{
+                            %> <%
+                        }
+                         %>
+                </td> 
                 <td>
-                    <%= ab.getAA01CATE2() %>
+                    <%= ab.getAA01CATE2()%>
                 </td>
                 
                 <td>
@@ -113,32 +141,16 @@ import="common.Common"
                 <a href="SaveServlet?AA01DOCID=<%= ab.getAA01DOCID()%>&MODE=2">削除</a>
                 </td>  
                 
-       
-                
-                <%--<td>
-                <button type=“button_EDIT” onclick="location.href='http://localhost:8080/YMCA/Input.jsp?AA01DOCID=' + <%= ab.getAA01DOCID()%> +  '&MODE=1'">編集</button>
-                </td> --%>
-                
-                
-                <%-- <td><%
-                        if(item.getFinishedDate() != null) {
-                   	        %><%= item.getFinishedDate() %><%
-                        }else{
-                            %>未<%
-                        }
-                %></td> --%>
+
     </tr>
     <%
 		 }
-	  }else{
+	  }
 	%>
 
 	</table>
 		
-	<div align="center">検索結果はありません。</div>
-	<% 	  
-	  }
-	%>	
+	
 		
 	
 

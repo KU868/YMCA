@@ -47,12 +47,12 @@ import="common.Common"
 <p>カテゴリ1
 
 <input type="radio" name="AA01CATE1" value="1" <%if(a2.getAA01CATE1().equals("1")){ %> checked="checked"<%} %> >WebPerformer
-<input type="radio" name="AA01CATE1" value="2" <%if(a2.getAA01CATE1().equals("2")){ %> checked="checked"<%} %>>java
-<input type="radio" name="AA01CATE1" value="3" <%if(a2.getAA01CATE1().equals("3")){ %> checked="checked"<%} %>>javascript
+<input type="radio" name="AA01CATE1" value="2" <%if(a2.getAA01CATE1().equals("2")){ %> checked="checked"<%} %>>Java
+<input type="radio" name="AA01CATE1" value="3" <%if(a2.getAA01CATE1().equals("3")){ %> checked="checked"<%} %>>Javascript
 <input type="radio" name="AA01CATE1" value="4" <%if(a2.getAA01CATE1().equals("4")){ %> checked="checked"<%} %>>SQL
 <input type="radio" name="AA01CATE1" value="5" <%if(a2.getAA01CATE1().equals("5")){ %> checked="checked"<%} %>>HTML/CSS
 <input type="radio" name="AA01CATE1" value="6" <%if(a2.getAA01CATE1().equals("6")){ %> checked="checked"<%} %>>IT関連
-<input type="radio" name="AA01CATE1" value="7" <%if(a2.getAA01CATE1().equals("7")){ %> checked="checked"<%} %>>日々の業務
+<input type="radio" name="AA01CATE1" value="7" <%if(a2.getAA01CATE1().equals("7")){ %> checked="checked"<%} %>>仕事に関すること
 <input type="radio" name="AA01CATE1" value="8" <%if(a2.getAA01CATE1().equals("8")){ %> checked="checked"<%} %>>その他
 </p>
 
@@ -60,7 +60,7 @@ import="common.Common"
 
 <input type="radio" name="AA01CATE2" value= "1" <%if(a2.getAA01CATE2().equals("1")){ %> checked="checked"<%} %>>忘備録
 <input type="radio" name="AA01CATE2" value="2"  <%if(a2.getAA01CATE2().equals("2")){ %> checked="checked"<%} %>>エラー/課題解決
-<input type="radio" name="AA01CATE2" value="3" <%if(a2.getAA01CATE2().equals("3")){ %> checked="checked"<%} %>>これ便利ですよ
+<input type="radio" name="AA01CATE2" value="3" <%if(a2.getAA01CATE2().equals("3")){ %> checked="checked"<%} %>>これ便利/ノウハウ
 <input type="radio" name="AA01CATE2" value="4" <%if(a2.getAA01CATE2().equals("4")){ %> checked="checked"<%} %>>質問
 <input type="radio" name="AA01CATE2" value="5" <%if(a2.getAA01CATE2().equals("5")){ %> checked="checked"<%} %>>つぶやき
 </p>

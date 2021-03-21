@@ -108,7 +108,7 @@ public class AA01Beans_02 {
 	
 	// 検索(フォームより)
 	
-	//AA01Beans_02 a2 = new AA01Beans_02(); 外側でインスタンス化するとなぜかstack overfrowが出てしまう。
+	//AA01Beans_02 a2 = new AA01Beans_02(); 外側でインスタンス化するとstack overfrowが出てしまう。
 	public AA01Beans_02 Search02(BigDecimal AA01DOCID, int MODE) {
 		AA01Beans_02 a2 = new AA01Beans_02();
 		Connection conn = null;
