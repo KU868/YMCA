@@ -22,7 +22,8 @@ public class Common {
 	 * @return •ÏŠ·”’l
 	 */
 	public static BigDecimal nvlnum(BigDecimal num, BigDecimal repNum){
-		  return (num == null)?repNum:num;
+			BigDecimal ZEROO = new BigDecimal(0);
+		  return (num == null || num == ZEROO)?repNum:num;
 		}
 	
 

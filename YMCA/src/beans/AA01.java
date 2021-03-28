@@ -106,10 +106,12 @@ public class AA01 {
 		HttpSession session = request.getSession();
 		String id = (String)session.getAttribute("USERID");
 		System.out.println(id);
-		
+		BigDecimal AA01SAKUSEMD = new BigDecimal(0);
 		
 		if (MODE == 0) { // êVãKìoò^
-			BigDecimal AA01SAKUSEMD = new BigDecimal(request.getParameter("AA01SAKUSEMD").replace("-", ""));
+			if(request.getParameter("AA01SAKUSEMD") != null && request.getParameter("AA01SAKUSEMD") != "0"){
+			AA01SAKUSEMD = new BigDecimal(request.getParameter("AA01SAKUSEMD").replace("-", ""));
+			}
 			setAA01DOCID(Common.nvlnum(AA01DOCID, ZERO));
 			setAA01SAKUSEMD(Common.nvlnum(AA01SAKUSEMD, ZERO));
 			setAA01CATE1(Common.nvl(request.getParameter("AA01CATE1"), ""));
@@ -119,7 +121,9 @@ public class AA01 {
 			setAA01SANKOU(Common.nvl(request.getParameter("AA01SANKOU"), ""));
 			setAA01USERID(Common.nvl(id, ""));
 		} else if (MODE == 1) { // çXêV
-			BigDecimal AA01SAKUSEMD = new BigDecimal(request.getParameter("AA01SAKUSEMD").replace("-", ""));
+			if(request.getParameter("AA01SAKUSEMD") != null && request.getParameter("AA01SAKUSEMD") != "0"){
+				AA01SAKUSEMD = new BigDecimal(request.getParameter("AA01SAKUSEMD").replace("-", ""));
+			}
 			setAA01DOCID(Common.nvlnum(AA01DOCID, ZERO));
 			setAA01SAKUSEMD(Common.nvlnum(AA01SAKUSEMD, ZERO));
 			setAA01CATE1(Common.nvl(request.getParameter("AA01CATE1"), ""));

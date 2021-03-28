@@ -32,8 +32,6 @@ public class LoginServlet extends HttpServlet {
 		response.setCharacterEncoding("UTF-8"); 
 		request.setCharacterEncoding("UTF-8");
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/Search.jsp");
-		dispatcher.forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -51,7 +49,7 @@ public class LoginServlet extends HttpServlet {
 		
 		if (zz01.getZZ01USERID() == "") {
 			request.setAttribute("message", "ID‚ªˆá‚¢‚Ü‚·");
-			request.getRequestDispatcher("Login.jsp").forward(request, response);
+			request.getRequestDispatcher("/Login.jsp").forward(request, response);
 		} else {
 			HttpSession session = request.getSession();
 			session.setAttribute("USERID", zz01.getZZ01USERID());
