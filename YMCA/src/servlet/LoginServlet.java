@@ -32,6 +32,8 @@ public class LoginServlet extends HttpServlet {
 		response.setCharacterEncoding("UTF-8"); 
 		request.setCharacterEncoding("UTF-8");
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/Search.jsp");
+		dispatcher.forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
