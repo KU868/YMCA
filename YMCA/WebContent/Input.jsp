@@ -59,9 +59,9 @@ import="javax.servlet.http.HttpSession"
 <!-- MODE -->	 <input type="hidden" name="MODE" value = <%=MODE%>> 
 <!-- 文書ID -->	 <input type="hidden" name="AA01DOCID" value = <%=a2.getAA01DOCID()%>> 
 	
-作成日 <input type="date" name="AA01SAKUSEMD" value = <%=con.fmtSlash(AA01SAKUSEMD)%>>
+作成日:<input type="date" name="AA01SAKUSEMD" value = <%=con.fmtSlash(AA01SAKUSEMD)%>>
 	
-<p>カテゴリ1
+<p>カテゴリ1:
 
 <input type="radio" name="AA01CATE1" value="1" <%if(a2.getAA01CATE1().equals("1")){ %> checked="checked"<%} %> >WebPerformer
 <input type="radio" name="AA01CATE1" value="2" <%if(a2.getAA01CATE1().equals("2")){ %> checked="checked"<%} %>>Java
@@ -73,7 +73,7 @@ import="javax.servlet.http.HttpSession"
 <input type="radio" name="AA01CATE1" value="8" <%if(a2.getAA01CATE1().equals("8")){ %> checked="checked"<%} %>>その他
 </p>
 
-<p>カテゴリ2
+<p>カテゴリ2:
 
 <input type="radio" name="AA01CATE2" value= "1" <%if(a2.getAA01CATE2().equals("1")){ %> checked="checked"<%} %>>忘備録
 <input type="radio" name="AA01CATE2" value="2"  <%if(a2.getAA01CATE2().equals("2")){ %> checked="checked"<%} %>>エラー/課題解決
@@ -81,9 +81,7 @@ import="javax.servlet.http.HttpSession"
 <input type="radio" name="AA01CATE2" value="4" <%if(a2.getAA01CATE2().equals("4")){ %> checked="checked"<%} %>>質問
 <input type="radio" name="AA01CATE2" value="5" <%if(a2.getAA01CATE2().equals("5")){ %> checked="checked"<%} %>>つぶやき
 </p>
-<br>
-<br>
-概要 <input type="text" name="AA01GAIYOU"  size="100" value = <%=a2.getAA01GAIYOU()%>><br>
+概要:<input type="text" name="AA01GAIYOU"  size="100" value = <%=a2.getAA01GAIYOU()%>><br>
 <br>
 
 詳細<br>

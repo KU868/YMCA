@@ -31,7 +31,7 @@ import="common.Common"
 <%
 	if(message != null){
 %>
-	<p><%=message %></p>	
+	<p><%=message%></p>	
 <%
 	}
 %>

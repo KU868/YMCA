@@ -57,7 +57,7 @@ import="javax.servlet.http.HttpSession"
 	<form action="/SearchServlet" method="post">
 
 
-<p>カテゴリ1
+<p>カテゴリ1:
 <input type="checkbox" name="AA01CATE1" value="1" >WebPerformer
 <input type="checkbox" name="AA01CATE1" value="2">Java
 <input type="checkbox" name="AA01CATE1" value="3">Javascript
@@ -69,7 +69,7 @@ import="javax.servlet.http.HttpSession"
 </p>
 
  		
-<p>カテゴリ2
+<p>カテゴリ2:
 <input type="checkbox" name="AA01CATE2" value="1">忘備録
 <input type="checkbox" name="AA01CATE2" value="2">エラー/課題解決
 <input type="checkbox" name="AA01CATE2" value="3">これ便利/ノウハウ
@@ -77,9 +77,9 @@ import="javax.servlet.http.HttpSession"
 <input type="checkbox" name="AA01CATE2" value="5">つぶやき
 </p>
  		
-概要<input type="text" name="AA01GAIYOU"><br><br>
+概要:<input type="text" name="AA01GAIYOU"><br><br>
  
-ユーザー<input type="text" name="ZZ01USERNAME" ><br><br>
+ユーザー:<input type="text" name="ZZ01USERNAME" ><br><br>
  
 
 
