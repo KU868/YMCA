@@ -8,6 +8,7 @@ import="java.util.List"
 import="java.util.ArrayList"
 import="beans.AA01Beans_02" 
 import="common.Common" 
+import="javax.servlet.http.HttpSession"
 %>
 
 
@@ -18,8 +19,7 @@ import="common.Common"
 <title>登録画面</title>
 </head>
 <body>
-<h1>登録画面</h1>
-
+	<link rel="stylesheet"  href="Style/Common.css">  
 <%
     String AA01DOCID_param =  request.getParameter("AA01DOCID");
  	BigDecimal AA01DOCID = new BigDecimal(AA01DOCID_param);
@@ -36,13 +36,30 @@ import="common.Common"
 	if(a2 != null){	
 	Common con = new Common();
 	String AA01SAKUSEMD = a2.getAA01SAKUSEMD().toString();	
+	
+	//セッション	
+	String id = (String)session.getAttribute("USERID");
+	String name = (String)session.getAttribute("USERNAME");
+	if(id!="" && name !=""){
+
 %> 
+
+<header>	
+<div class="header_logo">アプリケーション_初号機 -登録画面-</div>
+<div class="namea">
+<p>ようこそ <%=name%> さん</p>
+
+	<%
+	}
+	%>
+</div>
+</header>
 	
 	<form action="/SaveServlet" method="post">
 <!-- MODE -->	 <input type="hidden" name="MODE" value = <%=MODE%>> 
 <!-- 文書ID -->	 <input type="hidden" name="AA01DOCID" value = <%=a2.getAA01DOCID()%>> 
 	
-作成日<input type="date" name="AA01SAKUSEMD" value = <%=con.fmtSlash(AA01SAKUSEMD)%>>
+作成日 <input type="date" name="AA01SAKUSEMD" value = <%=con.fmtSlash(AA01SAKUSEMD)%>>
 	
 <p>カテゴリ1
 
@@ -64,18 +81,18 @@ import="common.Common"
 <input type="radio" name="AA01CATE2" value="4" <%if(a2.getAA01CATE2().equals("4")){ %> checked="checked"<%} %>>質問
 <input type="radio" name="AA01CATE2" value="5" <%if(a2.getAA01CATE2().equals("5")){ %> checked="checked"<%} %>>つぶやき
 </p>
-
-概要<input type="text" name="AA01GAIYOU" value = <%=a2.getAA01GAIYOU()%>><br>
+<br>
+<br>
+概要 <input type="text" name="AA01GAIYOU"  size="100" value = <%=a2.getAA01GAIYOU()%>><br>
 <br>
 
-詳細：<br>
-<textarea name="AA01SYOUSAI" rows="8" cols="80" ><%=a2.getAA01SYOUSAI()%></textarea><br>
+詳細<br>
+<textarea name="AA01SYOUSAI" rows="8" cols="80" style="margin: 0px; width: 708px; height: 236px;"><%=a2.getAA01SYOUSAI()%></textarea><br>
 
 
 <!-- ユーザー --><br>
 <input type="hidden" name="AA01USERID" value = <%=a2.getAA01USERID()%>> 
 
-ファイル
 
 	<% 
 	  }else{
@@ -91,6 +108,13 @@ import="common.Common"
 
 <input type="submit" value="保存">
 </form>
+
+	<div class="wrapper">
+    </div>
+	<!-- footer -->
+  <footer>
+<p>© All rights reserved by K.</p>
+  </footer>	
 
 </body>
 </html>

@@ -9,6 +9,7 @@ import="java.util.ArrayList"
 import="beans.AA01Beans_02" 
 import="common.Common" 
 
+
 %>
 
 <%
@@ -24,8 +25,9 @@ import="common.Common"
 <title>ログイン画面</title>
 </head>
 <body>
-
+	<link rel="stylesheet"  href="Style/Common.css">  
 <header>
+</header>
 <%
 	if(message != null){
 %>
@@ -33,10 +35,8 @@ import="common.Common"
 <%
 	}
 %>
-   
-</header>
 
-<form action="LoginServlet"  method="POST">
+<form action="/LoginServlet"  method="POST">
 
 <table>
 	<tr><td>ID：</td>
@@ -48,6 +48,13 @@ import="common.Common"
 </ul>
 
 </form>
+
+	<div class="wrapper">
+    </div>
+	<!-- footer -->
+  <footer>
+<p>© All rights reserved by K.</p>
+  </footer>	
 
 </body>
 </html>

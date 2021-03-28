@@ -12,7 +12,6 @@ import="javax.servlet.http.HttpSession"
 %>
 
 <%	
-	
 	String id = (String)session.getAttribute("USERID");
 	String name = (String)session.getAttribute("USERNAME");
 	if(id!="" && name !=""){
@@ -24,7 +23,7 @@ import="javax.servlet.http.HttpSession"
 <head>
 <meta charset="UTF-8">
 <title>トップページ</title>
-
+	<link rel="stylesheet"  href="Style/Common.css">  
 <header><center><h1 class="h">トップページ</h1></center>
 
 <p>ようこそ <%=name%> さん </p>
@@ -53,6 +52,15 @@ import="javax.servlet.http.HttpSession"
 </script>    
 
 </head>
+
+	<div class="wrapper">
+    </div>
+	<!-- footer -->
+  <footer>
+<p>© All rights reserved by K.</p>
+  </footer>	
+
+
 <body>
 
 </body>

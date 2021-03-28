@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+
+/* 検索ページ */
+
+table.toolbar {
+    margin-top: 16px;
+    margin-bottom: 32px;
+}
+
+ table.list th {
+    text-align: center;
+    color: #ffffff;
+    background-color: #5555aa;
+}
+
+table.list td {
+    background-color: #bbbbff;
+   
+} 
+
+/* 幅 */
+
+#AA01SAKUSEMD,#AA01SAKUSEMD_label,#ZZ01USERNAME_label,#ZZ01USERNAME{
+	width:80px;
+}
+
+#AA01CATE1_label,#AA01CATE2_label,#AA01CATE1,#AA01CATE2{
+	width:150px
+}
+
+#AA01GAIYOU_label,#AA01GAIYOU{
+	width:250px
+}

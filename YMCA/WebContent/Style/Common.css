@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+/* 基本のスタイル */
+h1 {
+	font-size: 32px;
+	margin: 0px;
+	padding: 4px;
+	color: #222288;
+}
+
+hr {
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+/* ヘッダー */
+header {
+	height: 57px;
+/* 	background: linear-gradient(90deg, red, orange, blue, green);
+    background-size: 500% 500%;
+    animation: gradation 10s infinite; */
+   background-image: linear-gradient( 135deg, #81FBB8 10%, #28C76F 100%);
+    margin-bottom:10px;
+}
+
+
+
+.header_logo {
+	float: left;
+	font-size: 20px;
+	font-family: 'MS Sans Serif';
+	color: #364e96;
+	padding: 0.5em 0;
+	border-top: solid 3px #364e96;
+	border-bottom: solid 3px #364e96;
+	text-align: center;
+}
+
+.namea{
+	text-align:right;
+}
+
+
+/* フッター */
+.wrapper {
+	min-height: 36vh;
+	position: relative; /*相対位置*/
+}
+
+footer {
+	width: 100%;
+	height: 10px;
+	background-image: linear-gradient( 135deg, #97ABFF 10%, #123597 100%);
+	color: white;
+	text-align: center;
+	padding: 30px 0;
+	position: absolute; /*絶対位置*/
+	bottom: 0; /*下に固定*/
+}

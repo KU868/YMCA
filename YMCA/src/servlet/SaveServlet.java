@@ -41,6 +41,7 @@ public class SaveServlet extends HttpServlet {
 			AA01 a1 = new AA01(request, AA01DOCID, MODE);
 			//削除
 			a1.DB_OPERATION(MODE);	
+			request.setAttribute("message1", "削除しました");
 		}
 		
 		// フォワード 処理の転送方法1 直接的 検索JSPに結果を戻す
@@ -84,6 +85,7 @@ public class SaveServlet extends HttpServlet {
 			a1.DB_OPERATION(MODE);
 		}
 		// フォワード 処理の転送方法1 直接的 検索JSPに結果を戻す
+		request.setAttribute("message1", "保存しました");
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/Search.jsp");
 		dispatcher.forward(request, response);
 
