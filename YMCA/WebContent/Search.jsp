@@ -16,6 +16,7 @@ import="javax.servlet.http.HttpSession"
 <%
 		List<AA01Beans_01> aa01 = (List<AA01Beans_01>)request.getAttribute("aa01"); 
 		String message1 = (String)request.getAttribute("message1");
+		String message2 = (String)request.getAttribute("message2");
 	
 		//セッション
 		String id = (String)session.getAttribute("USERID");
@@ -47,8 +48,12 @@ import="javax.servlet.http.HttpSession"
 <%
 	if(message1 != null){
 %>
-	<p><%=message1 %></p>	
+	<p>保存しました。</p>	
 <%
+	}else if(message2 != null){
+%>
+	<p>削除しました。</p>	
+<%		
 	}
 %>
 	<!-- "location.href='/Input.jsp?   スラッシュをつけると、/YMCA/が消える-->
