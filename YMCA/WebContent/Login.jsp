@@ -44,7 +44,7 @@ import="common.Common"
 </table>
 
 <ul class="line">
-	<input type="submit" class="button" value="ログイン">
+	<input type="submit"  value="ログイン">
 </ul>
 
 </form>
