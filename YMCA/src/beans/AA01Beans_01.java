@@ -192,6 +192,10 @@ public class AA01Beans_01 {
 				sb.append("AND" + " " + "ZZ01USERNAME" + " " + "LIKE"+ " " + "?");
 				sb.append(" ");
 			}
+			
+			sb.append("ORDER BY AA01SAKUSEMD DESC");
+			
+			
 
 			System.out.println("SQLï∂ÅF" + sb.toString());
 
@@ -214,6 +218,7 @@ public class AA01Beans_01 {
 			if (ZZ01USERNAME != "") {
 				psmt.setObject(paramcount, "%" +ZZ01USERNAME+ "%");
 			}
+			
 			
 			
 			//SQLï∂ÇÃé¿çs
