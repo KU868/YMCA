@@ -122,7 +122,18 @@ import="javax.servlet.http.HttpSession"
 				
                 <td><!-- パラメタとの幅は空けない。仮に前が少し空いていた場合 空白文字がString[0] にはいってしまい、受取先で"　1"　として受け取ってしまう 　→ formatエラーになっていた -->
                 	<div class="list" id="AA01SAKUSEMD">
-                    <a href= "http://kkaa01.herokuapp.com/Input.jsp?AA01DOCID=<%= ab.getAA01DOCID()%>&MODE=1"> <p><%= con.fmtSlash(ab.getAA01SAKUSEMD().toString())%></p></a>
+                	<%
+                	if(!(ab.getAA01SAKUSEMD().toString().equals("0"))){ 
+                	%>
+                    <a href= "http://kkaa01.herokuapp.com/Input.jsp?AA01DOCID=<%= ab.getAA01DOCID()%>&MODE=1"> <p><%= con.fmtSlash(ab.getAA01SAKUSEMD().toString())%></p></a>              		
+               		<%
+                	}else{
+                	%> 
+                	<a href= "http://kkaa01.herokuapp.com/Input.jsp?AA01DOCID=<%= ab.getAA01DOCID()%>&MODE=1"> <p>入力無し</p></a>
+                	<%
+                    }
+                    %>
+                	
                		</div>
                 </td>
                 

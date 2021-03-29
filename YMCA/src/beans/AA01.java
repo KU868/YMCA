@@ -109,7 +109,7 @@ public class AA01 {
 		BigDecimal AA01SAKUSEMD = new BigDecimal(0);
 		
 		if (MODE == 0) { // êVãKìoò^
-			if(request.getParameter("AA01SAKUSEMD") != null && request.getParameter("AA01SAKUSEMD") != "0"){
+			if(request.getParameter("AA01SAKUSEMD") != null && request.getParameter("AA01SAKUSEMD") != ""){
 			AA01SAKUSEMD = new BigDecimal(request.getParameter("AA01SAKUSEMD").replace("-", ""));
 			}
 			setAA01DOCID(Common.nvlnum(AA01DOCID, ZERO));
@@ -121,7 +121,7 @@ public class AA01 {
 			setAA01SANKOU(Common.nvl(request.getParameter("AA01SANKOU"), ""));
 			setAA01USERID(Common.nvl(id, ""));
 		} else if (MODE == 1) { // çXêV
-			if(request.getParameter("AA01SAKUSEMD") != null && request.getParameter("AA01SAKUSEMD") != "0"){
+			if(request.getParameter("AA01SAKUSEMD") != null && request.getParameter("AA01SAKUSEMD") != ""){
 				AA01SAKUSEMD = new BigDecimal(request.getParameter("AA01SAKUSEMD").replace("-", ""));
 			}
 			setAA01DOCID(Common.nvlnum(AA01DOCID, ZERO));
