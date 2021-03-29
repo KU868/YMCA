@@ -106,11 +106,6 @@ import="javax.servlet.http.HttpSession"
 
 
 	<% 
-	  }else{
-	%>
-		<div align="center">検索結果はありません。</div>
-	
-	<%
 	  }
 	%>
 
