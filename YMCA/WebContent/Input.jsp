@@ -36,6 +36,7 @@ import="javax.servlet.http.HttpSession"
 	if(a2 != null){	
 	Common con = new Common();
 	String AA01SAKUSEMD = a2.getAA01SAKUSEMD().toString();	
+	String message1 = (String)request.getAttribute("message1");
 	
 	//セッション	
 	String id = (String)session.getAttribute("USERID");
@@ -54,8 +55,20 @@ import="javax.servlet.http.HttpSession"
 	%>
 </div>
 </header>
-	
-	<form action="/SaveServlet" method="post">
+
+<%
+	if(message1 != null){
+%>
+	<p>保存しました。</p>	
+<%
+	}
+%>
+<button class="buttonBack" onclick="location.href='Search.jsp'">戻る</button>
+
+<form action="/SaveServlet" method="post">
+<input type="submit" class="button" value="保存">　       
+<br> 
+<br>
 <!-- MODE -->	 <input type="hidden" name="MODE" value = <%=MODE%>> 
 <!-- 文書ID -->	 <input type="hidden" name="AA01DOCID" value = <%=a2.getAA01DOCID()%>> 
 	
@@ -81,11 +94,11 @@ import="javax.servlet.http.HttpSession"
 <input type="radio" name="AA01CATE2" value="4" <%if(a2.getAA01CATE2().equals("4")){ %> checked="checked"<%} %>>質問
 <input type="radio" name="AA01CATE2" value="5" <%if(a2.getAA01CATE2().equals("5")){ %> checked="checked"<%} %>>つぶやき
 </p>
-概要:<input type="text" name="AA01GAIYOU"  size="100" value = <%=a2.getAA01GAIYOU()%>><br>
+概要: <input type="text" class="AA01GAIYOU" name="AA01GAIYOU"  size="80" value = <%=a2.getAA01GAIYOU()%>><br>
 <br>
 
 詳細<br>
-<textarea name="AA01SYOUSAI" rows="8" cols="80" style="margin: 0px; width: 708px; height: 236px;"><%=a2.getAA01SYOUSAI()%></textarea><br>
+<textarea name="AA01SYOUSAI" class="AA01SYOUSAI" rows="8" cols="80" style="margin: 0px; width: 708px; height: 236px;"><%=a2.getAA01SYOUSAI()%></textarea><br>
 
 
 <!-- ユーザー --><br>
@@ -101,10 +114,6 @@ import="javax.servlet.http.HttpSession"
 	  }
 	%>
 
-
-
-
-<input type="submit" value="保存">
 </form>
 
 	<div class="wrapper">

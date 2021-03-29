@@ -62,7 +62,6 @@ public class SaveServlet extends HttpServlet {
 
 		int MODE = Integer.parseInt(request.getParameter("MODE"));
 		BigDecimal AA01DOCID = new BigDecimal(request.getParameter("AA01DOCID"));
-		
 		/*
 		 * 新規登録
 		 */
@@ -86,7 +85,7 @@ public class SaveServlet extends HttpServlet {
 		}
 		// フォワード 処理の転送方法1 直接的 検索JSPに結果を戻す
 		request.setAttribute("message1", "保存しました");
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/Search.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/Input.jsp?AA01DOCID="+ AA01DOCID +"&MODE=1");
 		dispatcher.forward(request, response);
 
 	}

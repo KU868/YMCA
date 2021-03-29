@@ -65,6 +65,12 @@ public class SearchServlet extends HttpServlet {
 			System.out.println("検索結果がサーブレットに戻ってきているか確認：" + ab.getAA01DOCID() + "  "  + ab.getAA01SAKUSEMD() + "  " + ab.getAA01CATE1());
 		}
 		
+		if(aa01.size()==0) {
+			request.setAttribute("KEKKA","0");
+		}else {
+			request.setAttribute("KEKKA","1");
+		}
+		
 		request.setAttribute("aa01", aa01);
 		
 		

@@ -14,9 +14,9 @@ import="javax.servlet.http.HttpSession"
 
 	<!-- 検索結果 の取得-->	
 <%
-		List<AA01Beans_01> aa01 = (List<AA01Beans_01>)request.getAttribute("aa01"); 
-		String message1 = (String)request.getAttribute("message1");
+		List<AA01Beans_01> aa01 = (List<AA01Beans_01>)request.getAttribute("aa01");
 		String message2 = (String)request.getAttribute("message2");
+		String KEKKA = (String)request.getAttribute("KEKKA");
 	
 		//セッション
 		String id = (String)session.getAttribute("USERID");
@@ -46,18 +46,14 @@ import="javax.servlet.http.HttpSession"
 </div>
 </header>
 <%
-	if(message1 != null){
-%>
-	<p>保存しました。</p>	
-<%
-	}else if(message2 != null){
+	if(message2 != null){
 %>
 	<p>削除しました。</p>	
 <%		
 	}
 %>
 	<!-- "location.href='/Input.jsp?   スラッシュをつけると、/YMCA/が消える-->
-	<button type=“button_NEW” onclick="location.href='Input.jsp?AA01DOCID=0&MODE=0'">新規登録</button>	
+	<button class="button" onclick="location.href='Input.jsp?AA01DOCID=0&MODE=0'">新規登録</button>	
 
 	<form action="/SearchServlet" method="post">
 
@@ -82,15 +78,25 @@ import="javax.servlet.http.HttpSession"
 <input type="checkbox" name="AA01CATE2" value="5">つぶやき
 </p>
  		
-概要:<input type="text" name="AA01GAIYOU"><br><br>
- 
-ユーザー:<input type="text" name="ZZ01USERNAME" ><br><br>
+	
+概要:　<input type="text" class="AA01GAIYOU" size="50" placeholder="キーワード" name="AA01GAIYOU"><br><br>
+
+
+ユーザー:　<input type="text" class="ZZ01USERNAME" placeholder="Name" name="ZZ01USERNAME" ><br><br>
  
 
 
-		<input type="submit" value="検索">
+		<input type="submit" class="button" value="検索">
 	</form>
-
+	
+	<%
+	if(KEKKA!=null){
+		if(KEKKA.equals("0")){
+		%>検索結果はありません<%
+		}
+	}	
+	%>     
+	
 
 	<!-- 一覧ラベル -->	
 	<table border="1"  class="list"> 	
@@ -110,21 +116,18 @@ import="javax.servlet.http.HttpSession"
                 <th>
                     <div class="list" id="ZZ01USERNAME_label">ユーザ</div>
                 </th>
-            </tr>
-            
-		
+            </tr>  
 		
 	<%
        //コレクションはループ内で取得する(一覧)
-       if(aa01 != null && aa01.size() != 0 ){
+       if(aa01 != null && aa01.size() != 0){
     	   Common con = new Common();
     	  	
          for(AA01Beans_01 ab : aa01) {
         	 //String AA01SAKUSEMD = ab.getAA01SAKUSEMD().toString();
-            				%> 
+	%>
 	
-	<tr>
-				
+	<tr>	
                 <td><!-- パラメタとの幅は空けない。仮に前が少し空いていた場合 空白文字がString[0] にはいってしまい、受取先で"　1"　として受け取ってしまう 　→ formatエラーになっていた -->
                 	<div class="list" id="AA01SAKUSEMD">
                 	<%

@@ -190,6 +190,8 @@ public class AA01Beans_01 {
 			
 			if(ZZ01USERNAME != "") {
 				sb.append("AND" + " " + "ZZ01USERNAME" + " " + "LIKE"+ " " + "?");
+				
+				
 				sb.append(" ");
 			}
 			
@@ -225,7 +227,7 @@ public class AA01Beans_01 {
 			ResultSet rs = psmt.executeQuery();
 			System.out.println("SQL文：" + sb.toString());
 			System.out.println("SQL成功しました");
-
+			
 			while (rs.next()) {
 
 				// aa01Beans型にしないとリストにaddできないため、以下のようにインスタンスを生成する
@@ -240,9 +242,9 @@ public class AA01Beans_01 {
 
 				// aa01Beans a = new
 				// aa01Beans(rs.getBigDecimal("AA01DOCID"),rs.getBigDecimal("AA01SAKUSEMD"),rs.getString("AA01CATE1"),rs.getString("AA01CATE2"),rs.getString("AA01GAIYOU"),rs.getString("AA01SYOUSAI"),rs.getString("AA01SANKOU"),rs.getString("AA01USERID"));
-
 				aa01.add(a);
 			}
+			
 			
 			conn.close();
 			psmt.close();
