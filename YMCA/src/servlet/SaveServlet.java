@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import beans.AA01;
 import beans.AA01Beans_01;
+import common.Common_check;
 import common.Common_db;
 
 @WebServlet("/SaveServlet")
@@ -62,6 +63,8 @@ public class SaveServlet extends HttpServlet {
 
 		int MODE = Integer.parseInt(request.getParameter("MODE"));
 		BigDecimal AA01DOCID = new BigDecimal(request.getParameter("AA01DOCID"));
+		
+		
 		/*
 		 * êVãKìoò^
 		 */

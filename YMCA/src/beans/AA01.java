@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 
 
 import common.Common;
+import common.Common_check;
 
 
 public class AA01 {
@@ -108,6 +109,12 @@ public class AA01 {
 		System.out.println(id);
 		BigDecimal AA01SAKUSEMD = new BigDecimal(0);
 		
+		//エスケープ処理
+		String AA01GAIYOU = request.getParameter("AA01GAIYOU");
+		String AA01SYOUSAI = request.getParameter("AA01SYOUSAI");
+		AA01GAIYOU = Common_check.Escape(AA01SYOUSAI);
+		AA01SYOUSAI = Common_check.Escape(AA01GAIYOU);		
+		
 		if (MODE == 0) { // 新規登録
 			if(request.getParameter("AA01SAKUSEMD") != null && request.getParameter("AA01SAKUSEMD") != ""){
 			AA01SAKUSEMD = new BigDecimal(request.getParameter("AA01SAKUSEMD").replace("-", ""));
@@ -116,8 +123,8 @@ public class AA01 {
 			setAA01SAKUSEMD(Common.nvlnum(AA01SAKUSEMD, ZERO));
 			setAA01CATE1(Common.nvl(request.getParameter("AA01CATE1"), ""));
 			setAA01CATE2(Common.nvl(request.getParameter("AA01CATE2"), ""));
-			setAA01GAIYOU(Common.nvl(request.getParameter("AA01GAIYOU"), ""));
-			setAA01SYOUSAI(Common.nvl(request.getParameter("AA01SYOUSAI"), ""));
+			setAA01GAIYOU(Common.nvl(AA01GAIYOU, ""));
+			setAA01SYOUSAI(Common.nvl(AA01SYOUSAI, ""));
 			setAA01SANKOU(Common.nvl(request.getParameter("AA01SANKOU"), ""));
 			setAA01USERID(Common.nvl(id, ""));
 		} else if (MODE == 1) { // 更新
@@ -128,8 +135,8 @@ public class AA01 {
 			setAA01SAKUSEMD(Common.nvlnum(AA01SAKUSEMD, ZERO));
 			setAA01CATE1(Common.nvl(request.getParameter("AA01CATE1"), ""));
 			setAA01CATE2(Common.nvl(request.getParameter("AA01CATE2"), ""));
-			setAA01GAIYOU(Common.nvl(request.getParameter("AA01GAIYOU"), ""));
-			setAA01SYOUSAI(Common.nvl(request.getParameter("AA01SYOUSAI"), ""));
+			setAA01GAIYOU(Common.nvl(AA01GAIYOU, ""));
+			setAA01SYOUSAI(Common.nvl(AA01SYOUSAI, ""));
 			setAA01SANKOU(Common.nvl(request.getParameter("AA01SANKOU"), ""));
 			setAA01USERID(Common.nvl(id, ""));
 		} else if (MODE == 2) { // 削除
