@@ -55,7 +55,7 @@ import="javax.servlet.http.HttpSession"
 	<!-- "location.href='/Input.jsp?   スラッシュをつけると、/YMCA/が消える-->
 	<button class="button" onclick="location.href='Input.jsp?AA01DOCID=0&MODE=0'">新規登録</button>	
 
-	<form action="/SearchServlet" method="post">
+	<form action="/YMCA/SearchServlet" method="post">
 
 
 <p>カテゴリ1:

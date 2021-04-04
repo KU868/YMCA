@@ -109,13 +109,15 @@ public class AA01 {
 		System.out.println(id);
 		BigDecimal AA01SAKUSEMD = new BigDecimal(0);
 		
-		//エスケープ処理
-		String AA01GAIYOU = request.getParameter("AA01GAIYOU");
-		String AA01SYOUSAI = request.getParameter("AA01SYOUSAI");
-		AA01GAIYOU = Common_check.Escape(AA01SYOUSAI);
-		AA01SYOUSAI = Common_check.Escape(AA01GAIYOU);		
+		
 		
 		if (MODE == 0) { // 新規登録
+			//エスケープ処理
+			String AA01GAIYOU = request.getParameter("AA01GAIYOU");
+			String AA01SYOUSAI = request.getParameter("AA01SYOUSAI");
+			AA01GAIYOU = Common_check.Escape(AA01SYOUSAI);
+			AA01SYOUSAI = Common_check.Escape(AA01GAIYOU);		
+			
 			if(request.getParameter("AA01SAKUSEMD") != null && request.getParameter("AA01SAKUSEMD") != ""){
 			AA01SAKUSEMD = new BigDecimal(request.getParameter("AA01SAKUSEMD").replace("-", ""));
 			}
@@ -128,6 +130,12 @@ public class AA01 {
 			setAA01SANKOU(Common.nvl(request.getParameter("AA01SANKOU"), ""));
 			setAA01USERID(Common.nvl(id, ""));
 		} else if (MODE == 1) { // 更新
+			//エスケープ処理
+			String AA01GAIYOU = request.getParameter("AA01GAIYOU");
+			String AA01SYOUSAI = request.getParameter("AA01SYOUSAI");
+			AA01GAIYOU = Common_check.Escape(AA01SYOUSAI);
+			AA01SYOUSAI = Common_check.Escape(AA01GAIYOU);		
+			
 			if(request.getParameter("AA01SAKUSEMD") != null && request.getParameter("AA01SAKUSEMD") != ""){
 				AA01SAKUSEMD = new BigDecimal(request.getParameter("AA01SAKUSEMD").replace("-", ""));
 			}
