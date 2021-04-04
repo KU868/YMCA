@@ -139,11 +139,11 @@ import="javax.servlet.http.HttpSession"
                 	<%
                 	if(!(ab.getAA01SAKUSEMD().toString().equals("0"))){ 
                 	%>
-                    <a href= "http://kkaa01.herokuapp.com/Input.jsp?AA01DOCID=<%= ab.getAA01DOCID()%>&MODE=1"> <p><%= con.fmtSlash(ab.getAA01SAKUSEMD().toString())%></p></a>              		
+                    <a href= "Input.jsp?AA01DOCID=<%= ab.getAA01DOCID()%>&MODE=1"><p><%= con.fmtSlash(ab.getAA01SAKUSEMD().toString())%></p></a>              		
                		<%
                 	}else{
                 	%> 
-                	<a href= "http://kkaa01.herokuapp.com/Input.jsp?AA01DOCID=<%= ab.getAA01DOCID()%>&MODE=1"> <p>入力無し</p></a>
+                	<a href= "Input.jsp?AA01DOCID=<%= ab.getAA01DOCID()%>&MODE=1"><p>入力無し</p></a>
                 	<%
                     }
                     %>

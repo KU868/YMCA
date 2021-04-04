@@ -32,7 +32,6 @@ import="javax.servlet.http.HttpSession"
 %>	
 <%	//編集画面のデータを表示する
 	
-	System.out.println("JSP確認");
 	if(ab2 != null && request != null){	
 	Common con = new Common();
 	String AA01SAKUSEMD = ab2.getAA01SAKUSEMD().toString();
@@ -65,7 +64,15 @@ import="javax.servlet.http.HttpSession"
 %>
 <button class="buttonBack" onclick="location.href='Search.jsp'">戻る</button>
 
-<form action="/YMCA/SaveServlet" method="post">
+<% if(request.getContextPath().equals("/YMCA")){ %>
+		<form action="/YMCA/SaveServlet" method="post">
+	<%
+	}else{%>
+		<form action="/SaveServlet" method="post">
+	<%
+	}
+	%>
+
 <input type="submit" class="button" value="保存">　 
 
 <br> 

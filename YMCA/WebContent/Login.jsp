@@ -36,7 +36,15 @@ import="common.Common"
 	}
 %>
 
-<form action="/YMCA/LoginServlet"  method="POST">
+<% if(request.getContextPath().equals("/YMCA")){ %>
+		<form action="/YMCA/LoginServlet"  method="POST">
+	<%
+	}else{%>
+		<form action="/LoginServlet" method="post">
+	<%
+	}
+	%>
+
 
 <table>
 	<tr><td>ID：</td>
