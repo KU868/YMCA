@@ -54,9 +54,16 @@ import="javax.servlet.http.HttpSession"
 %>
 	<!-- "location.href='/Input.jsp?   スラッシュをつけると、/YMCA/が消える-->
 	<button class="button" onclick="location.href='Input.jsp?AA01DOCID=0&MODE=0'">新規登録</button>	
-
-	<form action="/YMCA/SearchServlet" method="post">
-
+	
+	<% if(request.getContextPath().equals("/YMCA")){ %>
+		<form action="/YMCA/SearchServlet" method="post">
+	<%
+	}else{%>
+		<form action="/SearchServlet" method="post">
+	<%
+	}
+	%>
+	
 
 <p>カテゴリ1:
 <input type="checkbox" name="AA01CATE1" value="1" >WebPerformer
@@ -88,7 +95,6 @@ import="javax.servlet.http.HttpSession"
 
 		<input type="submit" class="button" value="検索">
 	</form>
-	
 	<%
 	if(KEKKA!=null){
 		if(KEKKA.equals("0")){

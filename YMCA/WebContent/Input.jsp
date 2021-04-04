@@ -65,7 +65,7 @@ import="javax.servlet.http.HttpSession"
 %>
 <button class="buttonBack" onclick="location.href='Search.jsp'">戻る</button>
 
-<form action="/SaveServlet" method="post">
+<form action="/YMCA/SaveServlet" method="post">
 <input type="submit" class="button" value="保存">　 
 
 <br> 

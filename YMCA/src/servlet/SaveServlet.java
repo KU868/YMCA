@@ -32,6 +32,7 @@ public class SaveServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
+		
 		int MODE = Integer.parseInt(request.getParameter("MODE"));
 		BigDecimal AA01DOCID = new BigDecimal(request.getParameter("AA01DOCID"));
 		

@@ -36,7 +36,7 @@ import="common.Common"
 	}
 %>
 
-<form action="/LoginServlet"  method="POST">
+<form action="/YMCA/LoginServlet"  method="POST">
 
 <table>
 	<tr><td>ID：</td>
