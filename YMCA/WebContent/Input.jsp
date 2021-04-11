@@ -34,8 +34,9 @@ import="javax.servlet.http.HttpSession"
 	
 	if(a2 != null && request != null){	
 	Common con = new Common();
+	String AA01SAKUSEMD = "";
 	if(a2.getAA01SAKUSEMD() != null){
-	String AA01SAKUSEMD = a2.getAA01SAKUSEMD().toString();
+	AA01SAKUSEMD = a2.getAA01SAKUSEMD().toString();
 	}
 	String message1 = (String)request.getAttribute("message1");
 	
