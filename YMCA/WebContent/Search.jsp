@@ -10,6 +10,7 @@ import="beans.AA01Beans_01"
 import="common.Common" 
 import= "java.net.InetAddress"
 import="javax.servlet.http.HttpSession"
+
 %>
 
 	<!-- 検索結果 の取得-->	
@@ -55,6 +56,13 @@ import="javax.servlet.http.HttpSession"
 	<!-- "location.href='/Input.jsp?   スラッシュをつけると、/YMCA/が消える-->
 	<button class="button" onclick="location.href='Input.jsp?AA01DOCID=0&MODE=0'">新規登録</button>	
 	
+	<%//オブジェクト
+    InetAddress ia = InetAddress.getLocalHost();
+    String ip = ia.getHostAddress();       //IPアドレス
+    String hostname = ia.getHostName();    //ホスト名
+    System.out.println("IPアドレス：" + ip);
+    System.out.println("ホスト名：" + hostname);%>
+	
 	<% if(request.getContextPath().equals("/YMCA")){ %>
 		<form action="/YMCA/SearchServlet" method="post">
 	<%
@@ -76,7 +84,9 @@ import="javax.servlet.http.HttpSession"
 <input type="checkbox" name="AA01CATE1" value="8">その他
 </p>
 
- 		
+ <%if(request!=null){ 
+System.out.println(request.getParameterValues("AA01CATE1"));	
+}%>			
 <p>カテゴリ2:
 <input type="checkbox" name="AA01CATE2" value="1">忘備録
 <input type="checkbox" name="AA01CATE2" value="2">エラー/課題解決
@@ -84,8 +94,7 @@ import="javax.servlet.http.HttpSession"
 <input type="checkbox" name="AA01CATE2" value="4">質問
 <input type="checkbox" name="AA01CATE2" value="5">つぶやき
 </p>
- 		
-	
+
 概要:　<input type="text" class="AA01GAIYOU" size="50" placeholder="キーワード" name="AA01GAIYOU"><br><br>
 
 

@@ -115,8 +115,8 @@ public class AA01 {
 			//エスケープ処理
 			String AA01GAIYOU = request.getParameter("AA01GAIYOU");
 			String AA01SYOUSAI = request.getParameter("AA01SYOUSAI");
-			AA01GAIYOU = Common_check.Escape(AA01SYOUSAI);
-			AA01SYOUSAI = Common_check.Escape(AA01GAIYOU);		
+			AA01GAIYOU = Common_check.Escape(AA01GAIYOU);
+			AA01SYOUSAI = Common_check.Escape(AA01SYOUSAI);		
 			
 			if(request.getParameter("AA01SAKUSEMD") != null && request.getParameter("AA01SAKUSEMD") != ""){
 			AA01SAKUSEMD = new BigDecimal(request.getParameter("AA01SAKUSEMD").replace("-", ""));
@@ -133,8 +133,8 @@ public class AA01 {
 			//エスケープ処理
 			String AA01GAIYOU = request.getParameter("AA01GAIYOU");
 			String AA01SYOUSAI = request.getParameter("AA01SYOUSAI");
-			AA01GAIYOU = Common_check.Escape(AA01SYOUSAI);
-			AA01SYOUSAI = Common_check.Escape(AA01GAIYOU);		
+			AA01GAIYOU = Common_check.Escape(AA01GAIYOU);
+			AA01SYOUSAI = Common_check.Escape(AA01SYOUSAI);		
 			
 			if(request.getParameter("AA01SAKUSEMD") != null && request.getParameter("AA01SAKUSEMD") != ""){
 				AA01SAKUSEMD = new BigDecimal(request.getParameter("AA01SAKUSEMD").replace("-", ""));
@@ -178,7 +178,7 @@ public class AA01 {
 
 				// SQL文の実行
 				psmt.executeUpdate();
-				System.out.println("SQL成功しました");
+
 				conn.close();
 				psmt.close();
 
