@@ -20,8 +20,11 @@ table.list td {
 } 
 
 
-/* 検索欄　テキストボックス*/
-
+/*折り返して表示させる*/
+.list{
+ word-break: normal;
+ word-break: break-all;
+}
 
 
 
