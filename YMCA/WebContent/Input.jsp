@@ -32,7 +32,7 @@ import="javax.servlet.http.HttpSession"
 %>	
 <%	//編集画面のデータを表示する
 	
-	if(a2 != null && request != null){	
+	if(a2 != null){	
 	Common con = new Common();
 	String AA01SAKUSEMD = "";
 	if(a2.getAA01SAKUSEMD() != null){
@@ -76,7 +76,7 @@ import="javax.servlet.http.HttpSession"
 	}
 	%>
 
-<input type="submit" class="button" id = "button_Save" value="保存" >　 
+<input type="submit" name = "button_Save" class="button" id = "button_Save" value="保存" >　 
 
 <br> 
 <br>
@@ -105,7 +105,7 @@ import="javax.servlet.http.HttpSession"
 <input type="radio" name="AA01CATE2" value="4" <%if(a2.getAA01CATE2().equals("4")){ %> checked="checked"<%} %>>質問
 <input type="radio" name="AA01CATE2" value="5" <%if(a2.getAA01CATE2().equals("5")){ %> checked="checked"<%} %>>つぶやき
 </p>
-概要: <input type="text" class="AA01GAIYOU" id= "id_AA01GAIYOU" name="AA01GAIYOU"  size="80" value = "<%=a2.getAA01GAIYOU()%>"><br>
+概要: <input type="text" name="AA01GAIYOU" class="AA01GAIYOU" id= "id_AA01GAIYOU"  size="80" value = "<%=a2.getAA01GAIYOU()%>"><br>
 <br>
 
 詳細<br>

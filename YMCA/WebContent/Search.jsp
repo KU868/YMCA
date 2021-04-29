@@ -15,6 +15,19 @@ import="javax.servlet.http.HttpSession"
 
 	<!-- 検索結果 の取得-->	
 <%
+		
+
+			// 1. JSPのフォームからおくられてきたもの　検索用　リクエストパラメータを取得
+		String[] AA01CATE1 = (String[])request.getAttribute("AA01CATE1");
+		System.out.println(AA01CATE1);	
+		String[] AA01CATE2 = (String[])request.getAttribute("AA01CATE2");
+			
+		String AA01GAIYOU = (String)request.getAttribute("AA01GAIYOU");
+		String ZZ01USERNAME = (String)request.getAttribute("ZZ01USERNAME");
+
+
+
+			
 		List<AA01Beans_01> aa01 = (List<AA01Beans_01>)request.getAttribute("aa01");
 		String message2 = (String)request.getAttribute("message2");
 		String KEKKA = (String)request.getAttribute("KEKKA");
@@ -72,38 +85,40 @@ import="javax.servlet.http.HttpSession"
 	}
 	%>
 	
+	
 
 <p>カテゴリ1:
-<input type="checkbox" name="AA01CATE1" value="1" >WebPerformer
-<input type="checkbox" name="AA01CATE1" value="2">Java
-<input type="checkbox" name="AA01CATE1" value="3">Javascript
-<input type="checkbox" name="AA01CATE1" value="4">SQL
-<input type="checkbox" name="AA01CATE1" value="5">HTML/CSS
-<input type="checkbox" name="AA01CATE1" value="6">IT関連
-<input type="checkbox" name="AA01CATE1" value="7">仕事に関すること
-<input type="checkbox" name="AA01CATE1" value="8">その他
+<input type="checkbox" name="AA01CATE1" value="1" <%if(AA01CATE1 != null){ %><%for(int i = 0; i < AA01CATE1.length;i++  ){ %> <%if(AA01CATE1[i].equals("1")){%> checked <%}%><%}%><%}%>>WebPerformer
+<input type="checkbox" name="AA01CATE1" value="2" <%if(AA01CATE1 != null){ %><%for(int i = 0; i < AA01CATE1.length;i++  ){ %> <%if(AA01CATE1[i].equals("2")){%> checked <%}%><%}%><%}%>>Java
+<input type="checkbox" name="AA01CATE1" value="3" <%if(AA01CATE1 != null){ %><%for(int i = 0; i < AA01CATE1.length;i++  ){ %> <%if(AA01CATE1[i].equals("3")){%> checked <%}%><%}%><%}%>>Javascript
+<input type="checkbox" name="AA01CATE1" value="4" <%if(AA01CATE1 != null){ %><%for(int i = 0; i < AA01CATE1.length;i++  ){ %> <%if(AA01CATE1[i].equals("4")){%> checked <%}%><%}%><%}%>>SQL
+<input type="checkbox" name="AA01CATE1" value="5" <%if(AA01CATE1 != null){ %><%for(int i = 0; i < AA01CATE1.length;i++  ){ %> <%if(AA01CATE1[i].equals("5")){%> checked <%}%><%}%><%}%>>HTML/CSS
+<input type="checkbox" name="AA01CATE1" value="6" <%if(AA01CATE1 != null){ %><%for(int i = 0; i < AA01CATE1.length;i++  ){ %> <%if(AA01CATE1[i].equals("6")){%> checked <%}%><%}%><%}%>>IT関連
+<input type="checkbox" name="AA01CATE1" value="7" <%if(AA01CATE1 != null){ %><%for(int i = 0; i < AA01CATE1.length;i++  ){ %> <%if(AA01CATE1[i].equals("7")){%> checked <%}%><%}%><%}%>>仕事に関すること
+<input type="checkbox" name="AA01CATE1" value="8" <%if(AA01CATE1 != null){ %><%for(int i = 0; i < AA01CATE1.length;i++  ){ %> <%if(AA01CATE1[i].equals("8")){%> checked <%}%><%}%><%}%>>その他
+
 </p>
 
- <%if(request!=null){ 
-System.out.println(request.getParameterValues("AA01CATE1"));	
-}%>			
+		
 <p>カテゴリ2:
-<input type="checkbox" name="AA01CATE2" value="1">忘備録
-<input type="checkbox" name="AA01CATE2" value="2">エラー/課題解決
-<input type="checkbox" name="AA01CATE2" value="3">これ便利/ノウハウ
-<input type="checkbox" name="AA01CATE2" value="4">質問
-<input type="checkbox" name="AA01CATE2" value="5">つぶやき
+<input type="checkbox" name="AA01CATE2" value="1" <%if(AA01CATE2 != null){ %><%for(int i = 0; i < AA01CATE2.length;i++  ){ %> <%if(AA01CATE2[i].equals("1")){%> checked <%}%><%}%><%}%>>忘備録
+<input type="checkbox" name="AA01CATE2" value="2" <%if(AA01CATE2 != null){ %><%for(int i = 0; i < AA01CATE2.length;i++  ){ %> <%if(AA01CATE2[i].equals("2")){%> checked <%}%><%}%><%}%>>エラー/課題解決
+<input type="checkbox" name="AA01CATE2" value="3" <%if(AA01CATE2 != null){ %><%for(int i = 0; i < AA01CATE2.length;i++  ){ %> <%if(AA01CATE2[i].equals("3")){%> checked <%}%><%}%><%}%>>これ便利/ノウハウ
+<input type="checkbox" name="AA01CATE2" value="4" <%if(AA01CATE2 != null){ %><%for(int i = 0; i < AA01CATE2.length;i++  ){ %> <%if(AA01CATE2[i].equals("4")){%> checked <%}%><%}%><%}%>>質問
+<input type="checkbox" name="AA01CATE2" value="5" <%if(AA01CATE2 != null){ %><%for(int i = 0; i < AA01CATE2.length;i++  ){ %> <%if(AA01CATE2[i].equals("5")){%> checked <%}%><%}%><%}%>>つぶやき
 </p>
 
-概要:　<input type="text" class="AA01GAIYOU" size="50" placeholder="キーワード" name="AA01GAIYOU"><br><br>
+概要:　<input type="text" class="AA01GAIYOU" size="50" placeholder="キーワード" name="AA01GAIYOU"<%if(AA01GAIYOU != null){%> value=<%=AA01GAIYOU%> <%}%>><br><br>
 
 
-ユーザー:　<input type="text" class="ZZ01USERNAME" placeholder="Name" name="ZZ01USERNAME" ><br><br>
+ユーザー:　<input type="text" class="ZZ01USERNAME" placeholder="Name" name="ZZ01USERNAME"  <%if(ZZ01USERNAME != null){%> value=<%=ZZ01USERNAME%> <%}%>><br><br>
  
 
 
+	
 		<input type="submit" class="button" value="検索">
 	</form>
+	
 	<%
 	if(KEKKA!=null){
 		if(KEKKA.equals("0")){

@@ -72,6 +72,10 @@ public class SearchServlet extends HttpServlet {
 		}
 		
 		request.setAttribute("aa01", aa01);
+		request.setAttribute("AA01CATE1", AA01CATE1);
+		request.setAttribute("AA01CATE2", AA01CATE2);
+		request.setAttribute("AA01GAIYOU", AA01GAIYOU);
+		request.setAttribute("ZZ01USERNAME", ZZ01USERNAME);
 		
 		
 		// 3. フォワード 処理の転送方法1　直接的   検索JSPに結果を戻す
